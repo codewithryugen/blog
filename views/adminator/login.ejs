@@ -1,0 +1,15 @@
+<%- include('./templates/header'); %>
+<div class="login">
+    <% if(flasher.status){%>
+        <span><%=flasher.message%></span>
+    <%}%>
+    <form action="/login" method="post" class="form">
+        <div class="title column">
+            <div class="one">Bocah</div> <span class="hint-color">Web</span>
+        </div>
+        <input type="text" name="username" placeholder="username" class="column" autocomplete="off">
+        <input type="password" name="password" placeholder="password" class="column" autocomplete="off">
+        <button class="column submit">LOGIN</button>
+    </form>
+</div>
+<%- include('./templates/footer'); %>

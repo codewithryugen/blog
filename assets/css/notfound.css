@@ -1,0 +1,12 @@
+.notfound{
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+
+.status-code{
+    font-size: 40px;
+    font-weight: 700;
+}

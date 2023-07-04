@@ -1,0 +1,11 @@
+<%- include('./templates/header'); %>
+<div class="admin">
+    <a href="/logout">Logout</a>
+    <form class="form" action="/admin" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" class="column">
+        <textarea name="title"  cols="10" rows="1" class="column text" placeholder="text for title" style="text-transform: capitalize;font-weight: 700;"></textarea>
+        <textarea name="content" cols="30" rows="10" class="column text" placeholder="text for content..."></textarea>
+        <button class="column submit" style="color: black;">Upload Postingan</button>
+    </form>
+</div>
+<%- include('./templates/footer'); %>

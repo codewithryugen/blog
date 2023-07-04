@@ -1,0 +1,21 @@
+<%- include('./templates/header'); %>
+<div class="content_blog">
+    <div class="item-blog">
+        <div class="col-blog">
+            <div class="col-blog-left">
+                <img src="/img/<%=storage.image%>" alt="<%=storage.image%>" class="img-content">
+            </div>
+            <div class="col-blog-right">
+                <h2 class="title-content"><%=storage.title%></h2>
+                <span class="time"><%=storage.createdAt%></span>
+            </div>
+        </div>
+        <div class="col-blog">
+            <p class="content-paragraf"><%=storage.content%></p>
+        </div>
+    </div>
+    <div class="item-blog">
+        sidebar
+    </div>
+</div>
+<%- include('./templates/footer'); %>

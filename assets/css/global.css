@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.header{
+    width:100%;
+    display: flex;
+    height:80px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.title-header{
+    flex: 1;
+    font-weight: 600;
+    font-size: 30px;
+}
+.one{
+    box-shadow: inset 1px 1px 1px chartreuse;
+    width: max-content;
+    display: inline;
+    padding: 0 1rem;
+    border-radius: 5px;
+}
+.hint-color{
+    color: chartreuse;
+}
+.humberger{
+    display: none;
+}
+.nav-links{
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    color: chartreuse;
+    z-index: 999;
+}
+.nav-link{
+    cursor: pointer;
+    font-size:22px;
+    font-weight: 500;
+    padding: 1rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: white;
+}
+
+.btn{
+    padding: 1rem;
+    text-decoration: none;
+    background-color: rgb(110, 180, 41);
+    font-weight: 600;
+    color: inherit;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.footer{
+    z-index:1;
+    top:95%;
+    position: fixed;
+    background:rgba(0,0,0,0.5);
+    bottom: 0;
+    padding: 1rem 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-left{
+    flex: 1;
+}
+.footer-right{
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    gap: 5px;
+    padding: 1rem;
+}
+.visite-icon{
+    width:15px;
+}
+
+
+@media only screen and (max-width:880px){
+    .nav-links{
+        display: block;
+    }
+    .humberger{
+        display: block;
+        cursor: pointer;
+    }
+    .humberger-line{
+        width: 30px;
+        height:3px;
+        background-color: white;
+        margin: 6px 0;
+    }
+    .nav-links{
+        position:absolute;
+        right: 0;
+        top: 80px;
+        width: 100%;
+        background-color: black;
+        transition: 0.2s;
+    }
+    .show-links{
+        left:0;
+    }
+    .hide-links{
+        left: -1000%;
+    }
+    .nav-link{
+        text-align: center;
+    }
+    .footer-left{
+        width: fit-content;
+        font-size:10px;
+    }
+}
+
