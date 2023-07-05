@@ -1,0 +1,47 @@
+.contact{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    min-height:100vh;
+}
+.contact-wrapper{
+    padding:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    background-color: aqua;
+    height:100%;
+    width:100%;
+}
+
+.contact-left{
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+    background-color: red;
+}
+.contact-right{
+    height:100%;
+    width:100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 1rem;
+}
+.col{
+    padding:1rem;
+}

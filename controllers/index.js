@@ -1,5 +1,11 @@
 import asyncHandler from 'express-async-handler';
 import Post from '../models/postModel.js';
+import { JSDOM } from 'jsdom';
+import DOMPurify from 'dompurify';
+import { markdown } from 'markdown';
+
+const window = new JSDOM('').window;
+const purify = DOMPurify(window);
 
 
 const data = {
@@ -11,6 +17,8 @@ const data = {
     login:false,
     admin:false,
     content_blog:false,
+    contact:false,
+    portofolio:false,
     storage:null,
     flasher:{
         status:false,
@@ -32,6 +40,12 @@ export const AboutView = asyncHandler(
     }
 );
 
+export const ContactView = asyncHandler(
+    async(req,res)=>{
+        res.render('contact',{...data,contact:true});
+    }
+)
+
 export const BlogView = asyncHandler(
     async(req,res)=>{
         res.render('blog',{...data,blog:true});
@@ -42,8 +56,8 @@ export const contentView = asyncHandler(
     async (req,res) =>{
         try{
             const {slug} = req.params;
-            data.storage= await Post.findById(slug);
-            data.description = data.storage.excerpt;
+            data.storage = await Post.findById(slug);
+            data.storage.content = purify.sanitize(markdown.toHTML(data.storage.content));
             res.render('content_blog',{...data,content_blog:true});
         }catch(err){
             return res.redirect('/notfound');
@@ -51,6 +65,15 @@ export const contentView = asyncHandler(
     }
 )
 
+export const PortofolioView = asyncHandler(
+    async (req,res)=>{
+        try{
+            res.render('portofolio',{...data,portofolio:true});
+        }catch(err){
+            console.log(err.message);
+        }
+    }
+)
 
 
 export const ProtectedRoutesNotfound = (req,res)=>{

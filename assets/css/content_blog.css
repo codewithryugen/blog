@@ -74,11 +74,9 @@
 
 @keyframes tik {
     from { color:red;font-weight: 500;}
-    to { color: chartreuse;font-weight: 700;}
+    to { color: chartreuse;font-weight: 500;}
 }
 .time{
     animation: 1s infinite tik;
-}
-.content-paragraf{
-  text-align: center;
+    font-size: 13px;
 }

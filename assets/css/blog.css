@@ -20,12 +20,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height:150px
+    min-height:150px;
+    padding:1rem;
 }
 .blog-img{
     height:100%;
     width:100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 .title-container{
     flex:2;
